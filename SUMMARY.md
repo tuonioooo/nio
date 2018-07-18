@@ -5,8 +5,8 @@
 * [同步与异步](tong-bu-yu-yi-bu.md)
 * [什么是NIO](shi-yao-shi-nio.md)
 * [Java NIO 概述](java-nio-gai-shu.md)
-* [Channel（通道）](channeltong-dao.md)
-* [Buffer（缓冲）](bufferhuan-chong.md)
-* Selector（选择器）
+* [Channel](channeltong-dao.md)
+* [Buffer](bufferhuan-chong.md)
+* [Selector](selectorff08-xuan-ze-qi-ff09.md)
 * [Scatter与Gather](scatteryu-gather.md)
 
