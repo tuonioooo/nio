@@ -1,7 +1,5 @@
 # Java NIO 概述
 
-[原文链接](http://tutorials.jenkov.com/java-nio/overview.html)  **作者：**Jakob Jenkov     **译者：**airu     **校对：**丁一
-
 Java NIO 由以下几个核心部分组成：
 
 * Channel
