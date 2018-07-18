@@ -12,8 +12,8 @@
     * [使用通道](channeltong-dao/tong-dao-ji-chu/shi-yong-tong-dao.md)
     * [关闭通道](channeltong-dao/tong-dao-ji-chu/guan-bi-tong-dao.md)
   * [FileChannel](channeltong-dao/filechannel.md)
-    * 文件锁
     * [FileChannel基本用法](channeltong-dao/filechannel/filechannelji-ben-yong-fa.md)
+    * [文件锁](channeltong-dao/filechannel/wen-jian-suo.md)
 * [Buffer](bufferhuan-chong.md)
 * [Selector](selectorff08-xuan-ze-qi-ff09.md)
 * [Scatter与Gather](scatteryu-gather.md)
