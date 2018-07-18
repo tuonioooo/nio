@@ -1,4 +1,8 @@
-Java NIO\(New IO\)是一个可以替代标准Java IO API的IO API（从Java 1.4开始\)，Java NIO提供了与标准IO不同的IO工作方式。
+# 什么是NIO
+
+Java NIO\(New IO\)是一个可以替代标准Java IO API的IO API（从Java 1.4开始\)，也可以说成非阻塞式I/O.
+
+# Java NIO提供了与标准IO不同的IO工作方式
 
 **Java NIO: Channels and Buffers（通道和缓冲区）**
 
