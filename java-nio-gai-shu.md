@@ -1,6 +1,6 @@
 # Java NIO 概述
 
-[原文链接](http://tutorials.jenkov.com/java-nio/overview.html)**作者：**Jakob Jenkov     **译者：**airu     **校对：**丁一
+[原文链接](http://tutorials.jenkov.com/java-nio/overview.html)  **作者：**Jakob Jenkov     **译者：**airu     **校对：**丁一
 
 Java NIO 由以下几个核心部分组成：
 
@@ -9,8 +9,6 @@ Java NIO 由以下几个核心部分组成：
 * Selectors
 
 虽然Java NIO 中除此之外还有很多类和组件，但在我看来，Channel，Buffer 和 Selector 构成了核心的API。其它组件，如Pipe和FileLock，只不过是与三个核心组件共同使用的工具类。因此，在概述中我将集中在这三个组件上。其它组件会在单独的章节中讲到。
-
-
 
 ### Channel 和 Buffer {#channels-and-buffers}
 
