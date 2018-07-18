@@ -1,10 +1,12 @@
 # Buffer
 
-参考文档：
+### 参考文档：
 
 JAVA NIO中文版第二章缓冲区
 
 百度链接: [https://pan.baidu.com/s/1ByltDNJqnoaKsUkEADMd6A](https://pan.baidu.com/s/1ByltDNJqnoaKsUkEADMd6A) 密码: 4fan
+
+### 概述
 
 Java NIO中的Buffer用于和NIO通道进行交互。如你所知，数据是从通道读入缓冲区，从缓冲区写入到通道中的。
 
