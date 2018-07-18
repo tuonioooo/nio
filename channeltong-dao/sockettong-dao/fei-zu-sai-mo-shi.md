@@ -1,10 +1,6 @@
 # 非阻塞模式
 
-Socket 通道可以在非阻塞模式下运行。这个陈述虽然简单却有着深远的含义。传统 Java socket
-
-的阻塞性质曾经是 Java 程序可伸缩性的最重要制约之一。非阻塞 I/O 是许多复杂的、高性能的程序
-
-构建的基础。
+Socket 通道可以在非阻塞模式下运行。这个陈述虽然简单却有着深远的含义。传统 Java socket的阻塞性质曾经是 Java 程序可伸缩性的最重要制约之一。非阻塞 I/O 是许多复杂的、高性能的程序构建的基础。
 
 要把一个 socket 通道置于非阻塞模式，我们要依靠所有 socket 通道类的公有超级类：
 
@@ -24,31 +20,18 @@ public abstract Object blockingLock( );
 }
 ```
 
-有条件的选择（readiness selection）是一种可以用来查询通道的机制，该查询可以判断通道是
+有条件的选择（readiness selection）是一种可以用来查询通道的机制，该查询可以判断通道是否准备好执行一个目标操作，如读或写。非阻塞 I/O 和可选择性是紧密相连的，那也正是管理阻塞模式的 API 代码要在 SelectableChannel 超级类中定义的原因。SelectableChannel 的剩余 API 将在第四章中讨论。
 
-否准备好执行一个目标操作，如读或写。非阻塞 I/O 和可选择性是紧密相连的，那也正是管理阻塞
+设置或重新设置一个通道的阻塞模式是很简单的，只要调用 configureBlocking\( \)方法即可，传递参数值为 true 则设为阻塞模式，参数值为 false 值设为非阻塞模式。真的，就这么简单！您可以通过调用 isBlocking\( \)方法来判断某个 socket 通道当前处于哪种模式：
 
-模式的 API 代码要在 SelectableChannel 超级类中定义的原因。SelectableChannel 的剩余 API 将在第
-
-四章中讨论。
-
-设置或重新设置一个通道的阻塞模式是很简单的，只要调用 configureBlocking\( \)方法即可，传
-
-递参数值为 true 则设为阻塞模式，参数值为 false 值设为非阻塞模式。真的，就这么简单！您
-
-可以通过调用 isBlocking\( \)方法来判断某个 socket 通道当前处于哪种模式：
-
-SocketChannel sc = SocketChannel.open\( \);
-
-sc.configureBlocking \(false\); // nonblocking
-
+```
+SocketChannel sc = SocketChannel.open( );
+sc.configureBlocking (false); // nonblocking
 ...
-
-if \( ! sc.isBlocking\( \)\) {
-
-doSomething \(cs\);
-
+if ( ! sc.isBlocking( )) {
+doSomething (cs);
 }
+```
 
 服务器端的使用经常会考虑到非阻塞 socket 通道，因为它们使同时管理很多 socket 通道变得更
 
