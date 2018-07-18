@@ -40,7 +40,7 @@ buf.put(newData.getBytes());
 buf.flip();
 
 while(buf.hasRemaining()) {
-	channel.write(buf);
+    channel.write(buf);
 }
 ```
 
@@ -97,9 +97,9 @@ force\(\)方法有一个boolean类型的参数，指明是否同时将文件元�
 
 下面的例子同时将文件数据和元数据强制写到磁盘上：
 
-| `1` | `channel.force(true);` |
-| :--- | :--- |
-
+```
+channel.force(true);
+```
 
 
 
