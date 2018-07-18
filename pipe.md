@@ -1,10 +1,12 @@
 # Pipe
 
-参考文档：
+**参考文档：**
 
 JAVA NIO中文版第三章通道 3.6 管道
 
 百度链接: [https://pan.baidu.com/s/1ByltDNJqnoaKsUkEADMd6A](https://pan.baidu.com/s/1ByltDNJqnoaKsUkEADMd6A) 密码: 4fan
+
+**概述**
 
 Java NIO 管道是2个线程之间的单向数据连接。`Pipe`有一个source通道和一个sink通道。数据会被写到sink通道，从source通道读取。
 
