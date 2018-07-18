@@ -2,33 +2,25 @@
 
 Java NIO中的FileChannel是一个连接到文件的通道。可以通过文件通道读写文件。
 
-FileChannel无法设置为非阻塞模式，它总是运行在阻塞模式下。
-
-
+_**FileChannel无法设置为非阻塞模式，它总是运行在阻塞模式下**_。
 
 ### 打开FileChannel {#open-filechannel}
 
 在使用FileChannel之前，必须先打开它。但是，我们无法直接打开一个FileChannel，需要通过使用一个InputStream、OutputStream或RandomAccessFile来获取一个FileChannel实例。下面是通过RandomAccessFile打开FileChannel的示例：
 
-| `1` | `RandomAccessFile aFile =newRandomAccessFile("data/nio-data.txt","rw");` |
-| :--- | :--- |
-
-
-| `2` | `FileChannel inChannel = aFile.getChannel();` |
-| :--- | :--- |
-
+```
+RandomAccessFile aFile = new RandomAccessFile("data/nio-data.txt", "rw");
+FileChannel inChannel = aFile.getChannel();
+```
 
 ### 从FileChannel读取数据 {#read-from-filechannel}
 
 调用多个read\(\)方法之一从FileChannel中读取数据。如：
 
-| `1` | `ByteBuffer buf = ByteBuffer.allocate(48);` |
-| :--- | :--- |
-
-
-| `2` | `int bytesRead = inChannel.read(buf);` |
-| :--- | :--- |
-
+```
+ByteBuffer buf = ByteBuffer.allocate(48);
+int bytesRead = inChannel.read(buf);
+```
 
 首先，分配一个Buffer。从FileChannel中读取的数据将被读到Buffer中。
 
@@ -38,49 +30,19 @@ FileChannel无法设置为非阻塞模式，它总是运行在阻塞模式下。
 
 使用FileChannel.write\(\)方法向FileChannel写数据，该方法的参数是一个Buffer。如：
 
-| `01` | `String newData = "New String to write to file..." + System.currentTimeMillis();` |
-| :--- | :--- |
+```
+String newData = "New String to write to file..." + System.currentTimeMillis();
 
+ByteBuffer buf = ByteBuffer.allocate(48);
+buf.clear();
+buf.put(newData.getBytes());
 
-| `02` |  |
-| :--- | :--- |
+buf.flip();
 
-
-| `03` | `ByteBuffer buf = ByteBuffer.allocate(48);` |
-| :--- | :--- |
-
-
-| `04` | `buf.clear();` |
-| :--- | :--- |
-
-
-| `05` | `buf.put(newData.getBytes());` |
-| :--- | :--- |
-
-
-| `06` |  |
-| :--- | :--- |
-
-
-| `07` | `buf.flip();` |
-| :--- | :--- |
-
-
-| `08` |  |
-| :--- | :--- |
-
-
-| `09` | `while(buf.hasRemaining()) {` |
-| :--- | :--- |
-
-
-| `10` | `channel.write(buf);` |
-| :--- | :--- |
-
-
-| `11` | `}` |
-| :--- | :--- |
-
+while(buf.hasRemaining()) {
+	channel.write(buf);
+}
+```
 
 注意FileChannel.write\(\)是在while循环中调用的。因为无法保证write\(\)方法一次能向FileChannel写入多少字节，因此需要重复调用write\(\)方法，直到Buffer中已经没有尚未写入通道的字节。
 
@@ -88,9 +50,9 @@ FileChannel无法设置为非阻塞模式，它总是运行在阻塞模式下。
 
 用完FileChannel后必须将其关闭。如：
 
-| `1` | `channel.close();` |
-| :--- | :--- |
-
+```
+channel.close();
+```
 
 ### FileChannel的position方法 {#filechannel-position}
 
@@ -100,13 +62,10 @@ FileChannel无法设置为非阻塞模式，它总是运行在阻塞模式下。
 
 这里有两个例子:
 
-| `1` | `longpos = channel.position();` |
-| :--- | :--- |
-
-
-| `2` | `channel.position(pos +123);` |
-| :--- | :--- |
-
+```
+long pos = channel.position();
+channel.position(pos +123);
+```
 
 如果将位置设置在文件结束符之后，然后试图从文件通道中读取数据，读方法将返回-1 —— 文件结束标志。
 
@@ -116,17 +75,17 @@ FileChannel无法设置为非阻塞模式，它总是运行在阻塞模式下。
 
 FileChannel实例的size\(\)方法将返回该实例所关联文件的大小。如:
 
-| `1` | `longfileSize = channel.size();` |
-| :--- | :--- |
-
+```
+long fileSize = channel.size();
+```
 
 ### FileChannel的truncate方法 {#filechannel-truncate}
 
 可以使用FileChannel.truncate\(\)方法截取一个文件。截取文件时，文件将中指定长度后面的部分将被删除。如：
 
-| `1` | `channel.truncate(1024);` |
-| :--- | :--- |
-
+```
+channel.truncate(1024);
+```
 
 这个例子截取文件的前1024个字节。
 
