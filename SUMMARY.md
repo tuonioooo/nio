@@ -28,4 +28,5 @@
   * [其他相关知识介绍](qi-ta-xiang-guan-zhi-shi-jie-shao.md)
 * [高性能网络框架——netty](gao-xing-neng-wang-luo-kuang-jia-2014-2014-netty.md)
   * [基础概念](gao-xing-neng-wang-luo-kuang-jia-2014-2014-netty/ji-chu-gai-nian.md)
+  * [入门教程](gao-xing-neng-wang-luo-kuang-jia-2014-2014-netty/ru-men-jiao-cheng.md)
 
