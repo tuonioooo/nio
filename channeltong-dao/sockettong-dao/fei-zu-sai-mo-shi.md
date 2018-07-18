@@ -10,27 +10,19 @@ Socket 通道可以在非阻塞模式下运行。这个陈述虽然简单却有�
 
 SelectableChannel。下面的方法就是关于通道的阻塞模式的：
 
+```
 public abstract class SelectableChannel
-
 extends AbstractChannel
-
 implements Channel
-
 {
-
 // This is a partial API listing
-
-public abstract void configureBlocking \(boolean block\)
-
+public abstract void configureBlocking (boolean block)
 throws IOException;
-
-public abstract boolean isBlocking\( \);
-
+public abstract boolean isBlocking( );
 99
-
-public abstract Object blockingLock\( \);
-
+public abstract Object blockingLock( );
 }
+```
 
 有条件的选择（readiness selection）是一种可以用来查询通道的机制，该查询可以判断通道是
 
