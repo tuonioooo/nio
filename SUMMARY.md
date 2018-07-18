@@ -19,7 +19,7 @@
     * [SocketChannel](channeltong-dao/sockettong-dao/socketchannel.md)
     * [ServerSocketChannel](channeltong-dao/sockettong-dao/serversocketchannel.md)
     * [DatagramChannel](channeltong-dao/sockettong-dao/datagramchannel.md)
+  * [Scatter与Gather](scatteryu-gather.md)
 * [Buffer](bufferhuan-chong.md)
 * [Selector](selectorff08-xuan-ze-qi-ff09.md)
-* [Scatter与Gather](scatteryu-gather.md)
 
