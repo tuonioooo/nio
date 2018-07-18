@@ -1,11 +1,13 @@
 # SocketChannel
 
+参考文档：
+
+JAVANIO中文版第三章通道  百度链接: [https://pan.baidu.com/s/1ByltDNJqnoaKsUkEADMd6A](https://pan.baidu.com/s/1ByltDNJqnoaKsUkEADMd6A) 密码: 4fan
+
 Java NIO中的SocketChannel是一个连接到TCP网络套接字的通道。可以通过以下2种方式创建SocketChannel：
 
 1. 打开一个SocketChannel并连接到互联网上的某台服务器。
 2. 一个新连接到达ServerSocketChannel时，会创建一个SocketChannel。
-
-
 
 ### 打开 SocketChannel {#opensocketchannel}
 
@@ -22,7 +24,6 @@ socketChannel.connect(new InetSocketAddress("http://jenkov.com", 80));
 
 ```
 socketChannel.close();
-
 ```
 
 ### 从 SocketChannel 读取数据 {#readfromsocketchannel}
